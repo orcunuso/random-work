@@ -1,0 +1,31 @@
+- hosts: all
+  user: root
+  gather_facts: no
+  tasks:
+
+  - name: Check if server is already provisioned
+    stat:
+      path: /etc/tf-provision.lock
+    register: alreadyProvisioned
+  - name: Run ansible tasks
+    when: alreadyProvisioned.stat.exists == False
+    block:
+
+####################### PROVISION  ########################
+
+    - name: Mark server as provisioned
+      file:
+        path: /etc/tf-provision.lock
+        owner: root
+        group: root
+        mode: 0600
+        state: touch
+    - name: Install OS Updates
+      #yum: update_cache=yes name='*' state=latest
+      yum: name=curl state=latest
+      register: yumupdateall
+    - name: Reboot Server
+      command: '/usr/bin/systemd-run --on-active=10 /usr/bin/systemctl reboot'
+      async: 0
+      poll: 0
+      when: yumupdateall.changed
