@@ -1,0 +1,67 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: certifications.k8s.orcunuso.io
+spec:
+  additionalPrinterColumns:
+  - name: Owner
+    description: Owner of the certification
+    JSONPath: .spec.owner
+    type: string
+  - name: Type
+    JSONPath: .spec.type
+    type: string
+  - name: Passed
+    JSONPath: .spec.passed
+    type: boolean
+  - name: Score
+    JSONPath: .spec.score
+    type: integer
+  - name: ExpireDate
+    JSONPath: .spec.expireDate
+    type: string
+  - name: Age
+    JSONPath: .metadata.creationTimestamp
+    type: date
+  group: k8s.orcunuso.io
+  names:
+    kind: Certification
+    listKind: CertificationList
+    plural: certifications
+    singular: certification
+    shortNames:
+    - cka
+  scope: Cluster
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          description: Spec for Certifications
+          required: ["owner","type","passed","score"]
+          type: object
+          properties:
+            owner:
+              description: Owner of the certification
+              type: string
+            type:
+              description: Certification type, CKA or CKAD
+              type: string
+            passed:
+              description: Passed?
+              type: boolean
+            score:
+              description: The exam score of the certificate owner
+              type: integer
+            expireDate:
+              description: The expiration date of the certification
+              type: string
+            fooBar:
+              description: Just an array example
+              type: array
+              items:
+                type: string

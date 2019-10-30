@@ -1,0 +1,11 @@
+apiVersion: k8s.orcunuso.io/v1alpha1
+kind: Certification
+metadata:
+  name: orcunuso-cka
+spec:
+  owner: 'Ozan Orcunus'
+  type: 'CKA'
+  passed: true
+  score: 92
+  expireDate: '26/09/2022'
+  fooBar: ['string-foo','string-bar']
