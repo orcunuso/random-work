@@ -12,7 +12,7 @@ SAMACCOUNTNAME=$1
 
 if [ $# -ne 1 ]; then
   echo "USAGE: $0 <username>"
-  echo "Note: OC Login Required"
+  echo "Note: OpenShift version: 3.11, OC Login Required"
   exit 1
 fi
 

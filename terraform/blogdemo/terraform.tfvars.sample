@@ -1,0 +1,12 @@
+# Rename this file as terraform.tfvars
+vcenter_server     = "vc.orcunus.demo"
+vcenter_user       = "user@orcunus.demo"
+vcenter_folder     = "DEMO/BLOG"
+vcenter_datacenter = "MyDC"
+vcenter_datastore  = "DATASTORE01"
+vcenter_rpool      = "DEMO/Resources/DemoRP"
+vcenter_network    = "Vlan123"
+vcenter_template   = "RHEL7K8S"
+ssh_key_private    = "/root/.ssh/id_rsa"
+kube_count         = 1
+kube_subnet        = "192.168.1"
