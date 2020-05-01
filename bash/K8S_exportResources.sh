@@ -1,6 +1,6 @@
 #!/bin/bash
 # This script exports resource details form a kubernetes cluster
-# Requires cluster-admin privileges
+# Requires cluster-admin privileges.
 
 MYBACKUPDIR=/tmp/k8sinfo-$(date +%Y%m%d%H%M)
 TARFILE=/tmp/k8sinfo-$(date +%Y%m%d%H%M).tar.gz
