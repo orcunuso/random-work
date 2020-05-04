@@ -46,7 +46,7 @@ foreach ($TableRow in $Table.Rows) {
 		"DC2VC"	{ $CurrentvCenter = "dc2vc01.mydomain.local" }
 		"DC3VC"	{ $CurrentvCenter = "dc3vc01.mydomain.local" }
 		"PREVC"	{ $CurrentvCenter = "dc1vc03.mydomain.local" }
-		"dc2vcSA02"	{ $CurrentvCenter = "dc2vcsa02.mydomain.local"   }
+		"dc2vc02"	{ $CurrentvCenter = "dc2vc02.mydomain.local"   }
 	}
 	
 	if ($Global:DefaultVIServer -eq $null) { 
