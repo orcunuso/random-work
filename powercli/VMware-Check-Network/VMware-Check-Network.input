@@ -1,0 +1,10 @@
+###########################################################################################################
+# Config File for VMware-Check-SAN script
+# Valid parameters:
+# 	VCENTER (Specify the vCenter Server to connect)
+#	CLUSTER (The clusters to be examined. This parameter accepts multiple lines for multiple clusters)
+# Please use "=" as a seperator
+###########################################################################################################
+VCENTER = 
+CLUSTER = 
+CLUSTER = 

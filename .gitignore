@@ -2,7 +2,10 @@
 *.crt
 *.key
 *.log
+*.rpm
 *.sh.source
+*.xlsx
+*.csv
 
 # Terraform Files
 *.tfstate
