@@ -69,9 +69,9 @@ function Stop-REST_VM {
     $response = Invoke-RestMethod -Uri $ApiURL -Method Post -Headers $headers
 }
 
-$VIServer = "dc2vcsa02.mydomain.local"
-$userName = "viadmin@vsphere65.local"
-$userPass = "Ssa@dm6vm55"
+$VIServer = ""
+$userName = ""
+$userPass = ""
 
 $WebClient = New-Object System.Net.WebClient
 [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
