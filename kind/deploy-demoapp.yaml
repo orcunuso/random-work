@@ -1,0 +1,45 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: demoapp-green
+  labels:
+    color: green
+spec:
+  containers:
+  - name: demoapp-green
+    image: orcunuso/demoapp:v0
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: demoapp-green-service
+spec:
+  selector:
+    color: green
+  ports:
+  - port: 8080
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: demoapp-red
+  labels:
+    color: red
+spec:
+  containers:
+  - name: demoapp-red
+    image: orcunuso/demoapp:v0
+    env:
+    - name: BLOG_BANNER_COLOR
+      value: red
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: demoapp-red-service
+spec:
+  selector:
+    color: red
+  ports:
+  - port: 8080
+---
